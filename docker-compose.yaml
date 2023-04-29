@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./pokedex
+    environment:
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./pokedex/src:/app/src
+      - /app/node_modules
+    ports:
+      - 3000:3000
+    container_name: pokedex-frontend
